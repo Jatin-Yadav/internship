@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>Login Form</title>
+<style>
+
+  body{
+        background-color: #009D91;
+      }
+  
+input[type=text],[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+input[type=submit] {
+  width: 100%;
+  background-color:#0B5FA5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(97, 186, 224);
+}
+
+div {
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 60px;
+  margin: 60px 90px;
+  
+}
+h1{ margin: 0px;}
+</style>
+<body>
+  
+<div>
+  <center><h1>Login Form</h1></center>
+  <form>
+    <label>User Name</label>
+    <input type="text" id="uname" placeholder="User name..">
+
+    <label>Email ID</label>
+    <input id="email" type="text" placeholder="Email">
+
+    <label>Password</label>
+    <input id="security" type="password" placeholder="Password">
+
+    <label>Country</label>
+    <select id="country">
+       <option value="india">India</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit" onclick="buttonclick()">
+  </form>
+</div>
+<script>
+    function buttonclick()
+    {
+       var name = document.getElementById("uname").value;
+       var uid = document.getElementById("email").value;
+       var pass = document.getElementById("security").value;
+       var Country = document.getElementById("country").value;
+       document.write("User Name : "+ name + "<br>");
+       document.write("User Email ID : "+ uid + "<br>");
+       document.write("Password : " + pass + "<br>");
+       document.write("Country :  " + Country + "<br>");
+    }
+</script>
+</body>
+</html>
