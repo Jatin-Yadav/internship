@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, #2F1A15 , #880E01);
+        }
+        .tip{
+            display: flex;
+            justify-content: center;
+            /*text-align: center;*/
+        }
+        .tip>div{
+            
+  background-color: #F7F7F7;
+  width: 380px;
+  margin: 90px;
+  text-align: center;
+  height: 480px;
+  font-size: 20px;
+  border: (2px solid black);
+  border-radius: 10px ;
+              }
+        h3{
+            margin-top: 0px;
+            padding: 5px;
+            background-color: black;
+            color: #F7F7F7;
+            border-radius: 10px;
+            border-bottom-right-radius:0px ;
+            border-bottom-left-radius:0px ;
+        }
+        input[type=text] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+  select {
+  width: 90%;
+  height: 60px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 25px;
+  }
+  
+input[type=submit] {
+  width: 50%;
+  height: 50px;
+  background-color:#AD123A;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #EC3E6F;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="tip">
+        <div>
+            <h3>TIP CALCULATOR</h3>
+            <label>How much was your bill?</label><br>
+            $<input id="amo" type="text" id="uname" placeholder="$ Bill Amount">
+             <br>
+            <label>How was your service?</label>
+            <select id="servics">
+                <option value="0">--Choose an Option--</option>
+               <option value="30">30% - Outstanding</option>
+               <option value="20">20% - Good</option>
+               <option value="15">15% - It was OK</option>
+               <option value="10">10% - Bad</option>
+               <option value="5">5% - Terrible</option>
+             </select>
+            <br>   
+            <label>How many people are sharing the bill?</label>
+            <input id="persons" type="text" placeholder="Number of people">
+            <br>
+            <input type="submit" value="CALCULATE!" onclick="tipcalculate()">
+            <p id="res"></p>
+            <p id="result"></p>   
+        </div>
+    </div>
+<script>
+     function tipcalculate(){
+    var amount = parseInt(document.getElementById("amo").value);
+    var serv = parseInt(document.getElementById("servics").value);
+    var nop = parseInt(document.getElementById("persons").value);
+    var tip ;
+    tip=(amount*serv)/100;
+    tip/=nop;
+    document.getElementById("result").innerHTML="TIP AMOUNT"+"<br>"+"$"+tip +"<br>"+"each";
+     } 
+</script>    
+</body>
+</html>
